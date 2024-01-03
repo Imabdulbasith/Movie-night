@@ -57,13 +57,13 @@
       background-color: #fff; /* White */
       border-radius: 50%;
       opacity: 0.5;
-      animation: float 3s infinite ease-in-out;
+      animation: float 6s infinite ease-in-out;
     }
 
     .heart:nth-child(2) {
       width: 20px;
       height: 20px;
-      animation-duration: 2s;
+      animation-duration: 4s;
     }
 
     /* ... (Styles for other heart sizes) ... */
@@ -71,7 +71,7 @@
     .heart:nth-child(10) {
       width: 20px;
       height: 20px;
-      animation-duration: 3.5s;
+      animation-duration: 5.5s;
     }
 
     .heart-container {
@@ -132,10 +132,10 @@
       heartsContainer.style.left = 0;
       heartsContainer.style.width = '100%';
       heartsContainer.style.height = '100%';
-      heartsContainer.style.pointer-events = 'none';
+      heartsContainer.style.pointerEvents = 'none';
       document.body.appendChild(heartsContainer);
 
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 50; i++) {
         createHeart(heartsContainer);
       }
     }
@@ -145,42 +145,6 @@
       heart.innerHTML = '❤️';
       heart.style.position = 'absolute';
       heart.style.color = '#e74c3c';
-      heart.style.fontSize = `${Math.random() * 20 + 10}px`;
-      heart.style.left = `${Math.random() * 100}vw`;
-      heart.style.animation = `float ${Math.random() * 2 + 1}s ease-out`;
+      heart.style.fontSize = `${Math.random() * 20 + 10}px
 
-      container.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 2000);
-    }
-
-    function moveNoButton() {
-      var button = document.getElementById("noButton");
-      var box = document.getElementById("noBox");
-      var maxX = window.innerWidth - box.clientWidth;
-      var maxY = window.innerHeight - box.clientHeight;
-
-      var stepX = 10; // Adjust the step size for horizontal movement
-      var stepY = 10; // Adjust the step size for vertical movement
-
-      var newX = Math.max(stepX, Math.min(maxX - stepX, Math.random() * maxX));
-      var newY = Math.max(stepY, Math.min(maxY - stepY, Math.random() * maxY));
-
-      box.style.transform = `translate(${newX}px, ${newY}px)`;
-    }
-  </script>
-
-  <style>
-    @keyframes float {
-      to {
-        transform: translateY(-100vh);
-        opacity: 0;
-      }
-    }
-  </style>
-
-</body>
-</html>
 
