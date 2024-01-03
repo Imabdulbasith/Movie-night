@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Romantic Movie Night</title>
-
-  <!-- Main Styles -->
   <style>
     body {
       text-align: center;
@@ -101,16 +99,12 @@
       color: #fff;
     }
   </style>
-
-  <!-- Additional Styles -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap">
-
 </head>
 <body>
 
   <div class="heart-background"></div>
 
-  <h1>Rashi, would you like to watch a movie with me? Pretty Please!</h1>
+  <h1>Do you want to watch a movie with me?</h1>
 
   <div class="container">
     <div class="box" id="yesBox">
@@ -123,7 +117,7 @@
 
   <script>
     function celebrateYes() {
-      alert("Great choice! Thank you for not clicking no ❤️🍿🎥");
+      alert("Great choice! Get ready for a cozy movie night. 🍿🎥");
 
       // Generate hearts
       const heartsContainer = document.createElement('div');
@@ -159,16 +153,31 @@
     function moveNoButton() {
       var button = document.getElementById("noButton");
       var box = document.getElementById("noBox");
-      var maxX = window.innerWidth - box.clientWidth - 10; // Adjusted to prevent moving out of the screen
-      var maxY = window.innerHeight - box.clientHeight - 10; // Adjusted to prevent moving out of the screen
+      var maxX = window.innerWidth - box.clientWidth;
+      var maxY = window.innerHeight - box.clientHeight;
 
-      var stepX = 5; // Adjusted the step size for horizontal movement
-      var stepY = 5; // Adjusted the step size for vertical movement
+      var stepX = 10; // Adjust the step size for horizontal movement
+      var stepY = 10; // Adjust the step size for vertical movement
 
       var newX = Math.max(stepX, Math.min(maxX - stepX, Math.random() * maxX));
       var newY = Math.max(stepY, Math.min(maxY - stepY, Math.random() * maxY));
 
       box.style.transform = `translate(${newX}px, ${newY}px)`;
+    }
+  </script>
+
+  <style>
+    @keyframes float {
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+
+</body>
+</html>
+
    
 
 
