@@ -57,13 +57,13 @@
       background-color: #fff; /* White */
       border-radius: 50%;
       opacity: 0.5;
-      animation: float 6s infinite ease-in-out;
+      animation: float 3s infinite ease-in-out;
     }
 
     .heart:nth-child(2) {
       width: 20px;
       height: 20px;
-      animation-duration: 4s;
+      animation-duration: 2s;
     }
 
     /* ... (Styles for other heart sizes) ... */
@@ -71,7 +71,7 @@
     .heart:nth-child(10) {
       width: 20px;
       height: 20px;
-      animation-duration: 5.5s;
+      animation-duration: 3.5s;
     }
 
     .heart-container {
@@ -135,7 +135,7 @@
       heartsContainer.style.pointerEvents = 'none';
       document.body.appendChild(heartsContainer);
 
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 20; i++) {
         createHeart(heartsContainer);
       }
     }
@@ -147,13 +147,13 @@
       heart.style.color = '#e74c3c';
       heart.style.fontSize = `${Math.random() * 20 + 10}px`;
       heart.style.left = `${Math.random() * 100}vw`;
-      heart.style.animation = `float ${Math.random() * 2 + 4}s ease-out`;
+      heart.style.animation = `float ${Math.random() * 2 + 1}s ease-out`;
 
       container.appendChild(heart);
 
       setTimeout(() => {
         heart.remove();
-      }, 6000); // Adjusted duration to match the animation duration
+      }, 2000);
     }
 
     function moveNoButton() {
@@ -162,8 +162,8 @@
       var maxX = window.innerWidth - box.clientWidth;
       var maxY = window.innerHeight - box.clientHeight;
 
-      var stepX = 5; // Adjusted the step size for horizontal movement
-      var stepY = 5; // Adjusted the step size for vertical movement
+      var stepX = 5; // Adjust the step size for horizontal movement
+      var stepY = 5; // Adjust the step size for vertical movement
 
       var newX = Math.max(stepX, Math.min(maxX - stepX, Math.random() * maxX));
       var newY = Math.max(stepY, Math.min(maxY - stepY, Math.random() * maxY));
@@ -175,7 +175,7 @@
   <style>
     @keyframes float {
       to {
-        transform: translateY(100vh);
+        transform: translateY(-100vh);
         opacity: 0;
       }
     }
@@ -183,6 +183,7 @@
 
 </body>
 </html>
+
 
 
 
