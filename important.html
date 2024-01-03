@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Romantic Movie Night</title>
+
+  <!-- Main Styles -->
   <style>
     body {
       text-align: center;
@@ -99,6 +101,10 @@
       color: #fff;
     }
   </style>
+
+  <!-- Additional Styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap">
+
 </head>
 <body>
 
@@ -117,7 +123,7 @@
 
   <script>
     function celebrateYes() {
-      alert("Great choice! Thank you for not clicking no❤️🍿🎥");
+      alert("Great choice! Thank you for not clicking no ❤️🍿🎥");
 
       // Generate hearts
       const heartsContainer = document.createElement('div');
@@ -126,7 +132,7 @@
       heartsContainer.style.left = 0;
       heartsContainer.style.width = '100%';
       heartsContainer.style.height = '100%';
-      heartsContainer.style.pointerEvents = 'none';
+      heartsContainer.style.pointer-events = 'none';
       document.body.appendChild(heartsContainer);
 
       for (let i = 0; i < 20; i++) {
@@ -174,105 +180,7 @@
       }
     }
   </style>
-  <!-- Add this within the <head> section -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap">
-
-<style>
-  body {
-    text-align: center;
-    font-family: 'Parisienne', cursive;
-    margin: 0;
-    padding: 0;
-    background-color: #ffd4d8; /* Baby Pink */
-    overflow: hidden;
-  }
-
-  h1 {
-    color: #e74c3c; /* Red */
-    margin-top: 50px;
-    font-size: 2em;
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 800px;
-    margin: 20px auto;
-  }
-
-  .box {
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #fff; /* White */
-    margin: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .heart-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .heart {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #fff; /* White */
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: float 3s infinite ease-in-out;
-  }
-
-  .heart:nth-child(2) {
-    width: 20px;
-    height: 20px;
-    animation-duration: 2s;
-  }
-
-  /* ... (Styles for other heart sizes) ... */
-
-  .heart:nth-child(10) {
-    width: 20px;
-    height: 20px;
-    animation-duration: 3.5s;
-  }
-
-  .heart-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .heart {
-    color: #e74c3c; /* Red */
-    font-size: 24px;
-  }
-
-  button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #ffd4d8; /* Baby Pink */
-    color: #e74c3c; /* Red */
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    margin: 20px;
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #e74c3c; /* Red */
-    color: #fff;
-  }
-</style>
-
 
 </body>
 </html>
+
