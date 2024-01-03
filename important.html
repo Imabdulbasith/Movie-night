@@ -7,108 +7,13 @@
   <style>
     body {
       text-align: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'Great Vibes', cursive;
+      margin: 50px;
       background-color: #ffd4d8; /* Baby Pink */
-      overflow: hidden;
     }
 
     h1 {
       color: #e74c3c; /* Red */
-      margin-top: 50px;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      max-width: 800px;
-      margin: 20px auto;
-    }
-
-    .box {
-      padding: 20px;
-      border-radius: 20px;
-      background-color: #fff; /* White */
-      margin: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .heart-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .heart {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #fff; /* White */
-      border-radius: 50%;
-      opacity: 0.5;
-      animation: float 3s infinite ease-in-out;
-    }
-
-    .heart:nth-child(2) {
-      width: 20px;
-      height: 20px;
-      animation-duration: 2s;
-    }
-
-    .heart:nth-child(3) {
-      width: 15px;
-      height: 15px;
-      animation-duration: 4s;
-    }
-
-    .heart:nth-child(4) {
-      width: 25px;
-      height: 25px;
-      animation-duration: 3s;
-    }
-
-    .heart:nth-child(5) {
-      width: 18px;
-      height: 18px;
-      animation-duration: 5s;
-    }
-
-    .heart:nth-child(6) {
-      width: 12px;
-      height: 12px;
-      animation-duration: 6s;
-    }
-
-    .heart:nth-child(7) {
-      width: 22px;
-      height: 22px;
-      animation-duration: 4s;
-    }
-
-    .heart:nth-child(8) {
-      width: 16px;
-      height: 16px;
-      animation-duration: 3s;
-    }
-
-    .heart:nth-child(9) {
-      width: 14px;
-      height: 14px;
-      animation-duration: 5s;
-    }
-
-    .heart:nth-child(10) {
-      width: 20px;
-      height: 20px;
-      animation-duration: 3.5s;
     }
 
     .heart-container {
@@ -124,33 +29,36 @@
     button {
       padding: 15px 30px;
       font-size: 18px;
-      background-color: #ffd4d8; /* Baby Pink */
+      background-color: #fff; /* White */
       color: #e74c3c; /* Red */
       border: none;
       cursor: pointer;
-      border-radius: 50px;
+      border-radius: 20px;
       margin: 20px;
     }
+
+    #yesButton {
+      margin-right: 10px;
+    }
+
+    #noButton {
+      margin-left: 10px;
+    }
   </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
 </head>
 <body>
 
-  <div class="heart-background"></div>
-
-  <h1>Do you want to watch a movie with me?</h1>
-
-  <div class="container">
-    <div class="box" id="yesBox">
-      <button onclick="celebrateYes()">Yes, I'd love to! <span class="heart">&#129505;</span></button>
-    </div>
-    <div class="box" id="noBox">
-      <button id="noButton" onclick="moveNoButton()">Ew...No! <span class="heart">&#128530;</span></button>
-    </div>
+  <h1>Rashi, would you like to watch a movie with me? Pretty please!</h1>
+  
+  <div class="heart-container">
+    <button id="yesButton" onclick="celebrateYes()">Yes, I'd love to! <span class="heart">&#129505;</span></button>
+    <button id="noButton" onclick="moveNoButton()">Ew...No! <span class="heart">&#128530;</span></button>
   </div>
 
   <script>
     function celebrateYes() {
-      alert("Great choice! Get ready for a cozy movie night. 🍿🎥");
+      alert("Great choice! Thanks for not clicking no ❤️🍿🎥");
 
       // Generate hearts
       const heartsContainer = document.createElement('div');
@@ -174,25 +82,26 @@
       heart.style.color = '#e74c3c';
       heart.style.fontSize = `${Math.random() * 20 + 10}px`;
       heart.style.left = `${Math.random() * 100}vw`;
-      heart.style.animation = `float ${Math.random() * 2 + 1}s ease-out`;
+      heart.style.animation = `float ${Math.random() * 4 + 2}s ease-out`;
 
       container.appendChild(heart);
 
       setTimeout(() => {
         heart.remove();
-      }, 2000);
+      }, 4000);
     }
 
     function moveNoButton() {
       var button = document.getElementById("noButton");
-      var box = document.getElementById("noBox");
       var maxX = window.innerWidth - button.clientWidth;
       var maxY = window.innerHeight - button.clientHeight;
 
       var newX = Math.random() * maxX;
       var newY = Math.random() * maxY;
 
-      box.style.transform = `translate(${newX}px, ${newY}px)`;
+      button.style.position = "absolute";
+      button.style.left = newX + "px";
+      button.style.top = newY + "px";
     }
   </script>
 
@@ -203,19 +112,11 @@
         opacity: 0;
       }
     }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
   </style>
 
 </body>
 </html>
+
 
 
    
