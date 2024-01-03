@@ -17,7 +17,6 @@
     h1 {
       color: #e74c3c; /* Red */
       margin-top: 50px;
-      font-size: 2em;
     }
 
     .container {
@@ -64,7 +63,47 @@
       animation-duration: 2s;
     }
 
-    /* ... (Styles for other heart sizes) ... */
+    .heart:nth-child(3) {
+      width: 15px;
+      height: 15px;
+      animation-duration: 4s;
+    }
+
+    .heart:nth-child(4) {
+      width: 25px;
+      height: 25px;
+      animation-duration: 3s;
+    }
+
+    .heart:nth-child(5) {
+      width: 18px;
+      height: 18px;
+      animation-duration: 5s;
+    }
+
+    .heart:nth-child(6) {
+      width: 12px;
+      height: 12px;
+      animation-duration: 6s;
+    }
+
+    .heart:nth-child(7) {
+      width: 22px;
+      height: 22px;
+      animation-duration: 4s;
+    }
+
+    .heart:nth-child(8) {
+      width: 16px;
+      height: 16px;
+      animation-duration: 3s;
+    }
+
+    .heart:nth-child(9) {
+      width: 14px;
+      height: 14px;
+      animation-duration: 5s;
+    }
 
     .heart:nth-child(10) {
       width: 20px;
@@ -91,12 +130,6 @@
       cursor: pointer;
       border-radius: 50px;
       margin: 20px;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #e74c3c; /* Red */
-      color: #fff;
     }
   </style>
 </head>
@@ -153,14 +186,11 @@
     function moveNoButton() {
       var button = document.getElementById("noButton");
       var box = document.getElementById("noBox");
-      var maxX = window.innerWidth - box.clientWidth;
-      var maxY = window.innerHeight - box.clientHeight;
+      var maxX = window.innerWidth - button.clientWidth;
+      var maxY = window.innerHeight - button.clientHeight;
 
-      var stepX = 10; // Adjust the step size for horizontal movement
-      var stepY = 10; // Adjust the step size for vertical movement
-
-      var newX = Math.max(stepX, Math.min(maxX - stepX, Math.random() * maxX));
-      var newY = Math.max(stepY, Math.min(maxY - stepY, Math.random() * maxY));
+      var newX = Math.random() * maxX;
+      var newY = Math.random() * maxY;
 
       box.style.transform = `translate(${newX}px, ${newY}px)`;
     }
@@ -173,10 +203,20 @@
         opacity: 0;
       }
     }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 
 </body>
 </html>
+
 
    
 
